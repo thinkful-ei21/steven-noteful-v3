@@ -16,3 +16,5 @@ folderSchema.set('toObject', {
 		delete ret._id;
 	}
 });
+
+module.exports = mongoose.model('Folder', folderSchema);

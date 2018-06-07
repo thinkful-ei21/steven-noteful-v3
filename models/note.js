@@ -18,3 +18,5 @@ noteSchema.set('toObject', {
     delete ret._id; // delete `_id`
   }
 });
+
+module.exports = mongoose.model('Note', noteSchema);
