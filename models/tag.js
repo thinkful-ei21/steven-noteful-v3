@@ -16,4 +16,8 @@ tagSchema.set('toObject', {
 	}
 });
 
+tagSchema.pre('remove', function(next) {
+	this.model('Note').remove({ tags: this.id }, next);
+});
+
 module.exports = mongoose.model('Tag', tagSchema);

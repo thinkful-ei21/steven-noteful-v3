@@ -4,6 +4,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const Folder = require('../models/folder');
+const Note = require('../models/note');
 
 const router = express.Router();
 
@@ -64,7 +65,7 @@ router.post('/', (req, res, next) => {
 			if (err.code === 11000) {
 				err = new Error('The folder name already exists');
 				err.status = 400;
-		    }
+		  }
 			next(err);
 		});
 });

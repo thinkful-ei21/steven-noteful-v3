@@ -16,4 +16,8 @@ folderSchema.set('toObject', {
 	}
 });
 
+folderSchema.pre('remove', function(next) {
+	this.model('Note').remove({ folderId: this.id }, next);
+});
+
 module.exports = mongoose.model('Folder', folderSchema);

@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 const Note = require('../models/note');
 const Folder = require('../models/folder');
+const Tag = require('../models/tag');
 
 const router = express.Router();
 
@@ -23,7 +24,7 @@ router.get('/', (req, res, next) => {
   }
 
   Note.find(filter)
-    .populate('folderId')
+    .populate('folderId tags')
     .sort({ updatedAt: 'desc' })
     .then(results => {
       res.json(results);
