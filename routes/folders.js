@@ -11,7 +11,7 @@ const router = express.Router();
 router.get('/', (req, res, next) => {
 	// folders sorted by name
 	Folder.find()
-		.sort({ name: 'desc' })
+		.sort('name')
 		.then(results => {
 			res.json(results);
 		})
