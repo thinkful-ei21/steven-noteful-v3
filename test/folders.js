@@ -162,7 +162,7 @@ describe('Noteful API - Folders', function () {
           expect(res).to.have.status(400);
           expect(res).to.be.json;
           expect(res.body).to.be.a('object');
-          expect(res.body.message).to.equal('Folder name already exists');
+          expect(res.body.message).to.equal('The folder name already exists');
         });
     });
 
@@ -243,7 +243,7 @@ describe('Noteful API - Folders', function () {
           expect(res).to.have.status(400);
           expect(res).to.be.json;
           expect(res.body).to.be.a('object');
-          expect(res.body.message).to.equal('Folder name already exists');
+          expect(res.body.message).to.equal('The folder name already exists');
         });
     });
 
