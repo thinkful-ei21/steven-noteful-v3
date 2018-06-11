@@ -48,7 +48,7 @@ router.get('/:id', (req, res, next) => {
 router.post('/', (req, res, next) => {
 	const { name } = req.body;
 	if(!name) {
-		const err = new Error('Missing `title` in request body');
+		const err = new Error('Missing `name` in request body');
 		err.status = 400;
 		return next(err);
 	}
